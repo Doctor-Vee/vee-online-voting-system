@@ -1,9 +1,13 @@
-function loginPage() {
-  document.getElementById('main2').style.display = 'flex';
-  document.getElementById('main1').style.display = 'none';
-}
+$(document).ready(function(){
+  $('#main2').hide();
+  $('#btn1').click(function(){
+    $('#main2').show();
+    $('#main1').hide();
+  });
 
-function signupPage() {
-  document.getElementById('main1').style.display = 'flex';
-  document.getElementById('main2').style.display = 'none';
-}
+  $('#btn2').click(function(){
+    $('#main2').hide();
+    $('#main1').show();
+  });
+
+});

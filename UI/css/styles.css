@@ -119,19 +119,11 @@ button.transparent {
   transform: translate(-50%, -50%);
 }
 
-#main {
-
-}
-
 #main1, #main2 {
   display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
   margin-top: 20px;
-}
-
-#main2 {
-  display: none;
 }
 
 .side1 {
