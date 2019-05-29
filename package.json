@@ -1,0 +1,28 @@
+{
+  "name": "vee-online-voting-system",
+  "version": "1.0.0",
+  "description": "an online voting system created for conducting Nigerian elections in order to reduce cost and the rate of stress and corruption",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Chinewubeze/vee-online-voting-system.git"
+  },
+  "keywords": [
+    "voting",
+    "election",
+    "nigeria"
+  ],
+  "author": "Victor CHINEWUBEZE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor-Chinewubeze/vee-online-voting-system/issues"
+  },
+  "homepage": "https://github.com/Victor-Chinewubeze/vee-online-voting-system#readme",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  }
+}
