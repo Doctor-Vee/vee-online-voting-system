@@ -17,6 +17,10 @@ body#dark {
   background: #003300;
 }
 
+body#light {
+  background: #DDFFDD;
+}
+
 .container {
   width: 90%;
   margin: auto;
@@ -74,6 +78,96 @@ nav a {
   font-weight: 700;
 }
 
+button {
+  border: 1px solid #038000;
+  border-radius: 100px;
+  color: white;
+  width: 150px;
+  cursor: pointer;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+button.shaded {
+  border-color: #038000;
+  background: #038000;
+}
+
+button.transparent {
+  border-color: white;
+  background: transparent;
+}
+
+/*Main body*/
+
+#loginCase {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main {
+
+}
+
+#main1, #main2 {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#main2 {
+  display: none;
+}
+
+.side1 {
+  background: linear-gradient(229.85deg, #00CC33 22.96%, #038000 77.58%);
+  background-size: cover;
+  color: white;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+}
+
+.side2 {
+  flex: 3;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  min-width: 400px;
+  max-width: 500px;
+  padding: 10px 0;
+  margin: 10px auto;
+}
+
+input, select, textarea {
+  background: #eee;
+  border: none;
+  border-radius: 2px;
+  padding: 7px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
 /* Footer */
 
 footer {
@@ -102,5 +196,8 @@ footer {
   header h1 {
     text-align: center;
   }
-
+  #loginCase{
+    position: unset;
+    transform: translate(0%, 0%);
+  }
 }
