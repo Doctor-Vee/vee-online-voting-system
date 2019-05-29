@@ -1,0 +1,106 @@
+/*
+Colours used
+light green - #00CC33
+dark green - #038000
+*/
+
+/* General */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
+  font: 0.75rem/1.5 Montserrat, Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body#dark {
+  background: #003300;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: linear-gradient(248.28deg, #00CC33 0%, #038000 100%);
+  padding: 0 20px;
+  border-bottom: #00CC33 solid 3px;
+}
+
+header #logo {
+  overflow: hidden;
+  display: flex;
+  flex-basis: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+header #logo img {
+  width: 50px;
+  object-fit: contain;
+}
+
+header h1 {
+  flex-grow: 1;
+  color: #FFF;
+}
+
+nav {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+nav a {
+  flex-grow: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.current {
+  color: #F0F4F3;
+  font-weight: 700;
+}
+
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: #ffffff;
+  background: linear-gradient(248.28deg, #038000 0%, #00CC33 100%);
+  text-align: center;
+}
+
+#footerSpace {
+  height: 50px;
+  margin: 0;
+  padding: 5px 50px 5px 10px;
+}
+
+/* Media Queries */
+
+@media(max-width: 900px) {
+  nav {
+    flex: 1 0 100%;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    text-align: center;
+  }
+
+}
