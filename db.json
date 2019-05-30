@@ -1,4 +1,152 @@
 {
-  "users": [],
+  "users": [
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "hhjhgjgjhg",
+      "id": 1
+    },
+    {
+      "firstName": "Chigorgor",
+      "lastName": "Enugu",
+      "email": "cenugu@gmail.com",
+      "password": "ksjkjsk",
+      "id": 2
+    },
+    {
+      "firstName": "Moses",
+      "lastName": "sjjks",
+      "email": "jjhhj@djdk.dkod",
+      "password": "jkjkjk",
+      "id": 3
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "jhkskjhsk",
+      "id": 4
+    },
+    {
+      "firstName": "jhjj",
+      "lastName": "jjj",
+      "email": "yyy@hhg.xjj",
+      "password": "jjj",
+      "id": 5
+    },
+    {
+      "firstName": "gfgf",
+      "lastName": "eer",
+      "email": "ff@jj.kk",
+      "password": "uyyu",
+      "id": 6
+    },
+    {
+      "firstName": "Man",
+      "lastName": "Must",
+      "email": "eat@gmail.com",
+      "password": "djhhj",
+      "id": 7
+    },
+    {
+      "firstName": "Chigorgor",
+      "lastName": "Fransisca",
+      "email": "disturbancemoneyisimportant@gmail.com",
+      "password": "sjhjhdjh",
+      "id": 8
+    },
+    {
+      "firstName": "John",
+      "lastName": "James",
+      "email": "jjames@gmail.com",
+      "password": "dkdjkjk",
+      "id": 9
+    },
+    {
+      "firstName": "Vee",
+      "lastName": "Vic",
+      "email": "vee@gmail.com",
+      "password": "lklkld",
+      "id": 10
+    },
+    {
+      "firstName": "Phone",
+      "lastName": "Gap",
+      "email": "is@gh.com",
+      "password": "kjdkjk",
+      "id": 11
+    },
+    {
+      "firstName": "Control",
+      "lastName": "Shift",
+      "email": "i@gmail.com",
+      "password": "jjdhjhd",
+      "id": 12
+    },
+    {
+      "firstName": "Ciej",
+      "lastName": "jdjkj",
+      "email": "skj@jkk.cc",
+      "password": "skjskjks",
+      "id": 13
+    },
+    {
+      "firstName": "Chigorgor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "xmnjkjdkxkjkjk",
+      "id": 14
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "skjsk",
+      "id": 16
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "smjjhjshj",
+      "id": 17
+    },
+    {
+      "firstName": "jshjhjwhj",
+      "lastName": "jshjjhjs",
+      "email": "sjsh@sjkjksj.sjkj",
+      "password": "skkjkjk",
+      "id": 18
+    },
+    {
+      "firstName": "shuyu",
+      "lastName": "wsw",
+      "email": "sss@djhdj.cc",
+      "password": "skjkjsk",
+      "id": 19
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "dkuwjii",
+      "id": 20
+    },
+    {
+      "firstName": "hghgh",
+      "lastName": "cjhjdh",
+      "email": "jhjhjd@kkdd.dd",
+      "password": "jdhjdhj",
+      "id": 21
+    },
+    {
+      "firstName": "xdjdkjjdjk",
+      "lastName": "jdhjhdjhj",
+      "email": "jdjhj@dmnd.ci",
+      "password": "skjkjdk",
+      "id": 22
+    }
+  ],
   "candidates": []
 }
