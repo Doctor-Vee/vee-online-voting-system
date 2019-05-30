@@ -44,6 +44,8 @@ function addUser() {
 
 function edit() {
   // alert('you clicked');
+  $('a[class="current"]').removeClass('current');
+$('a[onclick="edit()"]').addClass('current');
 $('.main-right').html(`<h2>These are the presidential candidates</h2> 
 <div class="candidates"></div>
 `);

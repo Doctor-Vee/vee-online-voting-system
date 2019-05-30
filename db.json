@@ -158,14 +158,14 @@
   "candidates": [
     {
       "name": "Buhari",
-      "age": "72",
+      "age": "76",
       "party": "APC",
       "photoUrl": "../img/bhr.jpg",
       "id": 1
     },
     {
       "name": "Atiku",
-      "age": "12345",
+      "age": "72",
       "party": "PDP",
       "photoUrl": "../img/atk.jpg",
       "id": 2
