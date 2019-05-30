@@ -11,6 +11,7 @@
   <meta name="author" content="Victor CHINEWUBEZE">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css" />
   <link rel="shortcut icon" type="image/x-icon" href="../img/vote-green.png">
+  <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body id="light">
@@ -18,7 +19,7 @@
     <div id="logo"><img src="../img/vote-white.png"></div>
     <h1>Vee Online Voting System</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html">Log Out</a>
       <a href="#" class="current">About</a>
     </nav>
 
@@ -27,10 +28,9 @@
   <section id="main">
     <nav>
         <a href="addcandidate.html" class="current">Add candidates</a>
-        <a href="editcandidate.html">View/Edit Candidate</a>
+        <a href="#" onclick="edit()">View/Edit Candidate</a>
         <a href="election.html">Set Election Deadline</a>
         <a href="index.html">Log Out</a>
-
     </nav>
     <div class="main-right">
       <h2>Add Candidate</h2>
@@ -40,7 +40,7 @@
         <input type="number" name="age" id="age" placeholder="Age..." required>
         <input type="text" name="party" id="party" placeholder="Party..." required>
         <input type="url" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
-        <button class="shaded" onclick="addCandidate()">Add Candidate</button>
+        <button class="shaded">Add Candidate</button>
       </form>
     </div>
   </section>

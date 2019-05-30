@@ -30,7 +30,7 @@ function addUser() {
         <h2>You have successfully registered on VOVS</h2>
         <h3>Your details are </h3>
         <b>Name: </b>${data.firstName} ${data.lastName} <br>
-        <b>Name: </b>${data.email} <br>
+        <b>Email: </b>${data.email} <br>
          `);
         alert(`Congratulations ${user.firstName} ${user.lastName}, You have successfully registered on VOVS. You can now sign in and cast your vote`);
 
@@ -40,4 +40,34 @@ function addUser() {
       }
     });
   });
+}
+
+function edit() {
+  // alert('you clicked');
+$('.main-right').html(`<h2>These are the presidential candidates</h2> 
+<div class="candidates"></div>
+`);
+
+$.ajax({
+  method:'GET',
+  url: 'http://localhost:3000/candidates',
+  dataType: 'json'
+}).done(function(data){
+  console.log(data);
+  $.map(data, function(candidate, i){
+    $('.candidates').append(`
+    <div class="candidate">
+    <a href="#">
+      <div><img src="${candidate.photoUrl}"></div>
+      <h4>${candidate.name}</h4>
+      <h3>${candidate.party}</h3>
+      <p>${candidate.age} years old</p>
+    </a>
+    <hr>
+    <a href="#">Delete</a> <hr>
+    <a href="#">Edit</a>
+  </div>`);
+  });
+});
+
 }

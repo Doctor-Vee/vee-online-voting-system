@@ -157,39 +157,18 @@
   ],
   "candidates": [
     {
-      "fName": "Muhammadu",
-      "lName": "Buhari",
-      "email": "mbuhari@gmail.com",
-      "password": "TheOtherRoom",
-      "id": 1
-    },
-    {
       "name": "Buhari",
       "age": "72",
       "party": "APC",
-      "photoUrl": "http://localhost:3000/candidates",
-      "id": 2
+      "photoUrl": "../img/bhr.jpg",
+      "id": 1
     },
     {
       "name": "Atiku",
       "age": "12345",
       "party": "PDP",
-      "photoUrl": "http://localhost:3000/candidates34",
-      "id": 3
-    },
-    {
-      "name": "Atikue",
-      "age": "123452",
-      "party": "PDPa",
-      "photoUrl": "http://localhost:3000/candidates34",
-      "id": 4
-    },
-    {
-      "name": "Atikue",
-      "age": "123452",
-      "party": "PDPa",
-      "photoUrl": "http://localhost:3000/candidates34",
-      "id": 5
+      "photoUrl": "../img/atk.jpg",
+      "id": 2
     }
   ]
 }
