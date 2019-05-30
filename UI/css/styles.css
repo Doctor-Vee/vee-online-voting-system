@@ -35,11 +35,10 @@ h2 {
   overflow: hidden;
 }
 
-.text{
+.text {
   line-height: 2;
   text-align: justify;
 }
-
 
 /* Header */
 
@@ -49,7 +48,7 @@ header {
   justify-content: space-between;
   background: linear-gradient(248.28deg, #00CC33 0%, #038000 100%);
   padding: 0 20px;
-  border-bottom: #00CC33 solid 3px;
+  border-bottom: #00CC33 solid 1px;
 }
 
 header #logo {
@@ -70,14 +69,14 @@ header h1 {
   color: #FFF;
 }
 
-nav {
+header nav {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   align-content: space-evenly;
 }
 
-nav a {
+header nav a {
   flex-grow: 1;
   color: #fff;
   text-align: center;
@@ -124,6 +123,37 @@ button.transparent {
   flex-wrap: wrap;
   border-radius: 5px;
   margin-top: 20px;
+}
+
+#main {
+  display: flex;
+}
+
+#main nav {
+  background: linear-gradient(49.35deg, #00CC33 22.2%, #038000 77.8%);
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-basis: 200px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-content: space-evenly;
+}
+
+#main nav a {
+  width: 100%;
+  flex-basis: 50px;
+  border-bottom: #00CC33 solid 1px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-right {
+  padding: 20px;
+  flex: 30;
 }
 
 .side1 {
@@ -183,7 +213,7 @@ footer {
 }
 
 #footerSpace {
-  height: 50px;
+  height: 25px;
   margin: 0;
   padding: 5px 50px 5px 10px;
 }
@@ -198,7 +228,7 @@ footer {
   header h1 {
     text-align: center;
   }
-  #loginCase{
+  #loginCase {
     position: unset;
     transform: translate(0%, 0%);
   }
