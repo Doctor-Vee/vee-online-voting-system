@@ -33,19 +33,16 @@
 
     </nav>
     <div class="main-right">
-      <div class="container" id="dbform"></div>
       <h2>Add Candidate</h2>
       <p>Fill in the details below to include a new candidate in the election</p>
-      <form action="http://localhost:3000/users" id="candidateForm">
+      <form action="http://localhost:3000/candidates" id="candidateForm">
         <input type="text" name="name" id="name" placeholder="Name..." required>
         <input type="number" name="age" id="age" placeholder="Age..." required>
         <input type="text" name="party" id="party" placeholder="Party..." required>
         <input type="url" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
-
-        <button class="shaded">Add Candidate</button>
+        <button class="shaded" onclick="addCandidate()">Add Candidate</button>
       </form>
     </div>
-  </div>
   </section>
 
   <div id="footerSpace"></div>
