@@ -18,7 +18,7 @@ body#dark {
 }
 
 body#light {
-  background: #DDFFDD;
+  background: #FFF;
 }
 
 a {
@@ -154,6 +154,7 @@ button.transparent {
 .main-right {
   padding: 20px;
   flex: 30;
+  text-align: center;
 }
 
 .side1 {
@@ -192,13 +193,15 @@ form {
 }
 
 input, select, textarea {
-  background: #eee;
+  background: #DDFFDD;
   border: none;
   border-radius: 2px;
   padding: 7px;
   width: 300px;
   margin-bottom: 10px;
 }
+
+
 
 /* Footer */
 

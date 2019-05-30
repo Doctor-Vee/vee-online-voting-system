@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VOVS | Admin dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Online Voting System">
+  <meta name="keywords" content="voting, election, nigeria">
+  <meta name="author" content="Victor CHINEWUBEZE">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../img/vote-green.png">
+</head>
+
+<body id="light">
+  <header>
+    <div id="logo"><img src="../img/vote-white.png"></div>
+    <h1>Vee Online Voting System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#" class="current">About</a>
+    </nav>
+
+  </header>
+
+  <section id="main">
+    <nav>
+        <a href="addcandidate.html" class="current">Add candidates</a>
+        <a href="editcandidate.html">View/Edit Candidate</a>
+        <a href="election.html">Set Election Deadline</a>
+        <a href="index.html">Log Out</a>
+
+    </nav>
+    <div class="main-right">
+      <div class="container" id="dbform"></div>
+      <h2>Add Candidate</h2>
+      <p>Fill in the details below to include a new candidate in the election</p>
+      <form action="http://localhost:3000/users" id="candidateForm">
+        <input type="text" name="name" id="name" placeholder="Name..." required>
+        <input type="number" name="age" id="age" placeholder="Age..." required>
+        <input type="text" name="party" id="party" placeholder="Party..." required>
+        <input type="url" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
+
+        <button class="shaded">Add Candidate</button>
+      </form>
+    </div>
+  </div>
+  </section>
+
+  <div id="footerSpace"></div>
+  <footer>
+    VOVS, Copyright &copy; 2019
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
