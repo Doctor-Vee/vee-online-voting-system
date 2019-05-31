@@ -146,7 +146,60 @@
       "email": "jdjhj@dmnd.ci",
       "password": "skjkjdk",
       "id": 22
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "34334",
+      "id": 23
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "sjhkjsd",
+      "id": 24
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "name": "Muhammadu Buhari",
+      "age": "76",
+      "party": "APC",
+      "photoUrl": "../img/bhr.jpg",
+      "id": 1
+    },
+    {
+      "name": "Atiku Abubakar",
+      "age": "72",
+      "party": "PDP",
+      "photoUrl": "../img/atk.jpg",
+      "id": 2
+    }
+  ],
+  "election": [
+    {
+      "election-id": "",
+      "deadline": "2019-05-10T13:24",
+      "id": 1
+    },
+    {
+      "election-id": "",
+      "deadline": "2019-05-10T13:24",
+      "id": 2
+    },
+    {
+      "deadline": "2019-05-03T03:03",
+      "id": 3
+    },
+    {
+      "deadline": "2019-05-03T09:05",
+      "id": 4
+    },
+    {
+      "deadline": "2019-05-03T09:09",
+      "id": 5
+    }
+  ]
 }
