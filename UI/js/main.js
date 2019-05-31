@@ -1,7 +1,8 @@
 $(document).ready(function () {
   $('#main2').hide();
   $('.modal').hide();
-
+  $('.election').hide();
+  
   $('#btn1').click(function () {
     $('#main2').show();
     $('#main1').hide();
@@ -20,6 +21,14 @@ function showModal() {
 
 function hideModal() {
   $('.modal').hide();
+}
+
+function showElection() {
+  $('.election').show();
+}
+
+function hideElection() {
+  $('.election').hide();
 }
 
 //Register a user
@@ -52,6 +61,12 @@ function addUser() {
     });
   });
 }
+
+//Register a user
+function addCandidate() {
+  console.log('In form now');
+}
+
 
 //Get all candidates
 function edit() {
@@ -139,15 +154,6 @@ url += `/${id}`;
     });
 }
 
-function modal(id, name, age, party, photoUrl){
-  showModal();
-  $('#modal-id').attr('value', id);
-  $('#modal-name').attr('value', name);
-  $('#modal-age').attr('value', age);
-  $('#modal-party').attr('value', party);
-  $('#modal-photoUrl').attr('value', photoUrl);
-}
-
 function deleteCandidate(id){
     let url = 'http://localhost:3000/candidates';
     url += `/${id}`;
@@ -161,4 +167,38 @@ function deleteCandidate(id){
         console.log(e.message);
       }
     });
+}
+
+function election(){
+  showElection();
+  // $('#modal-id').attr('value', id);
+  // $('#modal-name').attr('value', name);
+  // $('#modal-age').attr('value', age);
+  // $('#modal-party').attr('value', party);
+  // $('#modal-photoUrl').attr('value', photoUrl);
+}
+
+function deadline(){
+  $('#modalForm').submit(function (e) {
+    e.preventDefault();
+    const id = $('#election-id').val();
+    const deadline = $('#deadline').val();
+    const age = $('#modal-age').val();
+    const party = $('#modal-party').val();
+    const photoUrl = $('#modal-photoUrl').val();
+    let url = $(this).attr('action');
+    url += `/${id}`;
+    const candidate = { name, age, party, photoUrl };
+    $.ajax({
+      url: url,
+      type: 'PUT',
+      data: candidate,
+      success: function (data) {
+        alert(`Congratulations ${data.name}'s details have been updated successfully`);
+      },
+      error: function (e) {
+        console.log(e.message);
+      }
+    });
+  });
 }

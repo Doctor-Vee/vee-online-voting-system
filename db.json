@@ -177,5 +177,17 @@
       "photoUrl": "../img/atk.jpg",
       "id": 2
     }
+  ],
+  "election": [
+    {
+      "election-id": "",
+      "deadline": "2019-05-10T13:24",
+      "id": 1
+    },
+    {
+      "election-id": "",
+      "deadline": "2019-05-10T13:24",
+      "id": 2
+    }
   ]
 }

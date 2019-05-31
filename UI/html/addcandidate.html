@@ -24,18 +24,18 @@
     <nav>
         <a href="addcandidate.html" class="current">Add candidates</a>
         <a href="#" onclick="edit()">View/Edit Candidate</a>
-        <a href="#">Set Election Deadline</a>
+        <a href="#" onclick="election()">Set Election Deadline</a>
         <a href="index.html">Log Out</a>
     </nav>
     <div class="main-right">
       <h2>Add Candidate</h2>
       <p>Fill in the details below to include a new candidate in the election</p>
-      <form action="http://localhost:3000/candidates" id="candidateForm">
+      <form action="http://localhost:3000/candidates" id="candidateForm" method="POST">
         <input type="text" name="name" id="name" placeholder="Name..." required>
         <input type="number" name="age" id="age" placeholder="Age..." required>
         <input type="text" name="party" id="party" placeholder="Party..." required>
         <input type="text" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
-        <button class="shaded">Add Candidate</button>
+        <button class="shaded" onclick="addCandidate()">Add Candidate</button>
       </form>
     </div>
   </section>
@@ -43,6 +43,7 @@
   <div class="modal" id="update">
     <div class="modal-contents">
       <form action="http://localhost:3000/candidates" id="modalForm">
+        <h2>Edit Candidate's Details</h2>
         <a href="#" onclick="hideModal()" class="close-btn"">&times;</a>
         <br /> <br />
         <input type="hidden" name="id" id="modal-id" required>
@@ -51,6 +52,18 @@
         <input type="text" name="party" id="modal-party" placeholder="Party..." required>
         <input type="text" name="photoUrl" id="modal-photoUrl" placeholder="Photo URL" required>
         <button type="submit" class="transparent" onclick="update()">Update</button>
+      </form>
+      </div>
+  </div>
+
+  <div class="election" id="election">
+    <div class="election-contents">
+      <form action="http://localhost:3000/election" id="electionForm" method="POST">
+        <h2>Set Election Deadline</h2>
+        <a href="#" onclick="hideElection()" class="close-btn"">&times;</a>
+        <br /> <br />
+        <input type="datetime-local" name="deadline" id="deadline" placeholder="Set Deadline..." required>
+        <button type="submit" class="transparent" onclick="deadline()">Set</button>
       </form>
       </div>
   </div>
