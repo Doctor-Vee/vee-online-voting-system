@@ -1,5 +1,7 @@
 $(document).ready(function () {
   $('#main2').hide();
+  $('.modal').hide();
+
   $('#btn1').click(function () {
     $('#main2').show();
     $('#main1').hide();
@@ -10,6 +12,15 @@ $(document).ready(function () {
     $('#main1').show();
   });
 });
+
+
+function showModal() {
+  $('.modal').show();
+}
+
+function hideModal() {
+  $('.modal').hide();
+}
 
 //Register a user
 function addUser() {
@@ -32,7 +43,7 @@ function addUser() {
         <b>Name: </b>${data.firstName} ${data.lastName} <br>
         <b>Email: </b>${data.email} <br>
          `);
-        alert(`Congratulations ${user.firstName} ${user.lastName}, You have successfully registered on VOVS. You can now sign in and cast your vote`);
+        alert(`Congratulations ${data.firstName} ${data.lastName}, You have successfully registered on VOVS. You can now sign in and cast your vote`);
 
       },
       error: function (e) {
@@ -42,22 +53,22 @@ function addUser() {
   });
 }
 
+//Get all candidates
 function edit() {
-  // alert('you clicked');
   $('a[class="current"]').removeClass('current');
-$('a[onclick="edit()"]').addClass('current');
-$('.main-right').html(`<h2>These are the presidential candidates</h2> 
+  $('a[onclick="edit()"]').addClass('current');
+  $('.main-right').html(`<h2>These are the presidential candidates</h2> 
 <div class="candidates"></div>
 `);
 
-$.ajax({
-  method:'GET',
-  url: 'http://localhost:3000/candidates',
-  dataType: 'json'
-}).done(function(data){
-  console.log(data);
-  $.map(data, function(candidate, i){
-    $('.candidates').append(`
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:3000/candidates',
+    dataType: 'json'
+  }).done(function (data) {
+    console.log(data);
+    $.map(data, function (candidate, i) {
+      $('.candidates').append(`
     <div class="candidate">
     <a href="#">
       <div><img src="${candidate.photoUrl}"></div>
@@ -67,9 +78,42 @@ $.ajax({
     </a>
     <hr>
     <a href="#">Delete</a> <hr>
-    <a href="#">Edit</a>
+    <a href="#" onclick="modal(${candidate.id}, '${candidate.name}', ${candidate.age}, '${candidate.party}', '${candidate.photoUrl}')">Update</a>
   </div>`);
+    });
   });
-});
+}
 
+function modal(id, name, age, party, photoUrl){
+  showModal();
+  $('#modal-id').attr('value', id);
+  $('#modal-name').attr('value', name);
+  $('#modal-age').attr('value', age);
+  $('#modal-party').attr('value', party);
+  $('#modal-photoUrl').attr('value', photoUrl);
+}
+
+function update(){
+  $('#modalForm').submit(function (e) {
+    e.preventDefault();
+    const id = $('#modal-id').val();
+    const name = $('#modal-name').val();
+    const age = $('#modal-age').val();
+    const party = $('#modal-party').val();
+    const photoUrl = $('#modal-photoUrl').val();
+    let url = $(this).attr('action');
+    url += `/${id}`;
+    const candidate = { name, age, party, photoUrl };
+    $.ajax({
+      url: url,
+      type: 'PUT',
+      data: candidate,
+      success: function (data) {
+        alert(`Congratulations ${data.name}'s details have been updated successfully`);
+      },
+      error: function (e) {
+        console.log(e.message);
+      }
+    });
+  });
 }

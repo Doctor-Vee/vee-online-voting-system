@@ -29,7 +29,7 @@
     <nav>
         <a href="addcandidate.html" class="current">Add candidates</a>
         <a href="#" onclick="edit()">View/Edit Candidate</a>
-        <a href="election.html">Set Election Deadline</a>
+        <a href="#" onclick="update()">Set Election Deadline</a>
         <a href="index.html">Log Out</a>
     </nav>
     <div class="main-right">
@@ -39,11 +39,26 @@
         <input type="text" name="name" id="name" placeholder="Name..." required>
         <input type="number" name="age" id="age" placeholder="Age..." required>
         <input type="text" name="party" id="party" placeholder="Party..." required>
-        <input type="url" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
+        <input type="text" name="photoUrl" id="photoUrl" placeholder="Photo URL" required>
         <button class="shaded">Add Candidate</button>
       </form>
     </div>
   </section>
+
+  <div class="modal" id="update">
+    <div class="modal-contents">
+      <form action="http://localhost:3000/candidates" id="modalForm">
+        <a href="#" onclick="hideModal()" class="close-btn"">&times;</a>
+        <br /> <br />
+        <input type="hidden" name="id" id="modal-id" required>
+        <input type="text" name="name" id="modal-name" placeholder="Name..." required>
+        <input type="number" name="age" id="modal-age" placeholder="Age..." required>
+        <input type="text" name="party" id="modal-party" placeholder="Party..." required>
+        <input type="text" name="photoUrl" id="modal-photoUrl" placeholder="Photo URL" required>
+        <button type="submit" class="transparent" onclick="update()">Update</button>
+      </form>
+      </div>
+  </div>
 
   <div id="footerSpace"></div>
   <footer>
