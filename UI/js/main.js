@@ -70,7 +70,7 @@ function edit() {
     $.map(data, function (candidate, i) {
       $('.candidates').append(`
     <div class="candidate">
-    <a href="#">
+    <a href="#" onclick="viewCandidate(${candidate.id})">
       <div><img src="${candidate.photoUrl}"></div>
       <h4>${candidate.name}</h4>
       <h3>${candidate.party}</h3>
@@ -78,7 +78,8 @@ function edit() {
     </a>
     <hr>
     <a href="#">Delete</a> <hr>
-    <a href="#" onclick="modal(${candidate.id}, '${candidate.name}', ${candidate.age}, '${candidate.party}', '${candidate.photoUrl}')">Update</a>
+    <a href="#" onclick="modal(${candidate.id}, '${candidate.name}', 
+    ${candidate.age}, '${candidate.party}', '${candidate.photoUrl}')">Update</a>
   </div>`);
     });
   });
@@ -116,4 +117,24 @@ function update(){
       }
     });
   });
+}
+
+function viewCandidate(id) {
+let url = 'http://localhost:3000/candidates';
+url += `/${id}`;
+  $.ajax({
+    method: 'GET',
+    url: url,
+    dataType: 'json'
+  }).done(function (data) {
+    console.log(data);
+    $('.main-right').html(`<h2>${data.name}</h2>
+    <div class="candidates"></div>
+  `);
+      $('.candidates').append(`
+    <div>
+      <div><img src="${data.photoUrl}"></div>
+      <h3>${data.party}</h3>
+      <p>${data.age} years old</p>`);
+    });
 }

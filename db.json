@@ -153,18 +153,25 @@
       "email": "victor.chinewubeze@gmail.com",
       "password": "34334",
       "id": 23
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "CHINEWUBEZE",
+      "email": "victor.chinewubeze@gmail.com",
+      "password": "sjhkjsd",
+      "id": 24
     }
   ],
   "candidates": [
     {
-      "name": "Muhammado Buhari",
+      "name": "Muhammadu Buhari",
       "age": "76",
       "party": "APC",
       "photoUrl": "../img/bhr.jpg",
       "id": 1
     },
     {
-      "name": "Articulate Abubakar",
+      "name": "Atiku Abubakar",
       "age": "72",
       "party": "PDP",
       "photoUrl": "../img/atk.jpg",
