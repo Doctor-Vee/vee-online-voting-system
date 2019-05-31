@@ -22,9 +22,9 @@
 
   <section id="main">
     <nav>
-      <a href="#" onclick="edit()">View All Candidates</a>
-      <a href="#" onclick="castVote()">Cast your vote</a>
-      <a href="#" onclick="election()">View Results</a>
+      <a href="#" onclick="view()">View All Candidates</a>
+      <a href="castvote.html">Cast your vote</a>
+      <a href="#" onclick="results()">View Results</a>
       <a href="index.html">Log Out</a>
     </nav>
     <div class="main-right">
@@ -40,20 +40,6 @@
       </p>
     </div>
   </section>
-
-  <div class="vote-right">
-    <div class="cast-vote">
-      <h2>Cast you vote</h2>
-      <p>Vote for the candidate of your choice</p>
-      <form action="http://localhost:3000/candidates" id="voteForm" method="POST">
-        <label for="vote"><input type="radio" name="vote" id="candidate1" placeholder="Party..." required>Candidate
-          1</label>
-        <label for="vote"><input type="radio" name="vote" id="candidate2" placeholder="Photo URL" required>Candidate
-          2</label>
-        <button class="shaded" onclick="addCandidate()">Vote</button>
-      </form>
-    </div>
-  </div>
 
 <div class="login-right">
   <div class="login" id="login">
