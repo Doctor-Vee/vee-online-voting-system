@@ -2,7 +2,9 @@ $(document).ready(function () {
   $('#main2').hide();
   $('.modal').hide();
   $('.election').hide();
-  
+  $('.vote-right').hide();
+  $('.login-right').hide();
+
   $('#btn1').click(function () {
     $('#main2').show();
     $('#main1').hide();
@@ -191,4 +193,10 @@ function deadline(){
       }
     });
   });
+}
+
+function castVote(){
+  $('.main-right p').hide();
+  $('.vote-right').show();
+  $('.vote-right').appendTo('.main-right');
 }
