@@ -171,30 +171,20 @@ function deleteCandidate(id){
 
 function election(){
   showElection();
-  // $('#modal-id').attr('value', id);
-  // $('#modal-name').attr('value', name);
-  // $('#modal-age').attr('value', age);
-  // $('#modal-party').attr('value', party);
-  // $('#modal-photoUrl').attr('value', photoUrl);
 }
 
 function deadline(){
-  $('#modalForm').submit(function (e) {
+  console.log('Entered in to the deadline region')
+  $('#electionForm').submit(function (e) {
     e.preventDefault();
-    const id = $('#election-id').val();
     const deadline = $('#deadline').val();
-    const age = $('#modal-age').val();
-    const party = $('#modal-party').val();
-    const photoUrl = $('#modal-photoUrl').val();
-    let url = $(this).attr('action');
-    url += `/${id}`;
-    const candidate = { name, age, party, photoUrl };
+    const election = { deadline };
     $.ajax({
-      url: url,
+      url: 'http://localhost:3000/election/1',
       type: 'PUT',
-      data: candidate,
+      data: election,
       success: function (data) {
-        alert(`Congratulations ${data.name}'s details have been updated successfully`);
+        alert(`Voting ends by ${data.deadline}`);
       },
       error: function (e) {
         console.log(e.message);
