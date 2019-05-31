@@ -2,7 +2,9 @@ $(document).ready(function () {
   $('#main2').hide();
   $('.modal').hide();
   $('.election').hide();
-  
+  // $('.vote-right').hide();
+  $('.login-right').hide();
+
   $('#btn1').click(function () {
     $('#main2').show();
     $('#main1').hide();
@@ -68,7 +70,7 @@ function addCandidate() {
 }
 
 
-//Get all candidates
+//Admin can edit all candidates
 function edit() {
   $('a[class="current"]').removeClass('current');
   $('a[onclick="edit()"]').addClass('current');
@@ -189,6 +191,43 @@ function deadline(){
       error: function (e) {
         console.log(e.message);
       }
+    });
+  });
+}
+/*
+function castVote(){
+  $('.main-right p').hide();
+  $('.vote-right').show();
+  $('.vote-right').appendTo('.main-right');
+}
+*/
+
+// USER ACTIONS
+
+//View all candidates
+function view() {
+  $('a[class="current"]').removeClass('current');
+  $('a[onclick="view()"]').addClass('current');
+  $('.main-right').html(`<h2>These are the presidential candidates</h2> 
+<div class="candidates"></div>
+`);
+
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:3000/candidates',
+    dataType: 'json'
+  }).done(function (data) {
+    console.log(data);
+    $.map(data, function (candidate, i) {
+      $('.candidates').append(`
+    <div class="candidate">
+    <a href="#" onclick="viewCandidate(${candidate.id})">
+      <div><img src="${candidate.photoUrl}"></div>
+      <h4>${candidate.name}</h4>
+      <h3>${candidate.party}</h3>
+      <p>${candidate.age} years old</p>
+    </a>
+  </div>`);
     });
   });
 }

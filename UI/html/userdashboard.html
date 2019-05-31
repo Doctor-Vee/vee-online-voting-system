@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>VOVS | Admin dashboard</title>
+  <title>VOVS | User dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Online Voting System">
   <meta name="keywords" content="voting, election, nigeria">
   <meta name="author" content="Victor CHINEWUBEZE">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css" />
-  <script src="../js/jquery-3.4.1.min.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="../img/vote-green.png">
+  <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body id="light">
@@ -22,22 +22,39 @@
 
   <section id="main">
     <nav>
-      <a href="addcandidate.html">Add candidates</a>
-      <a href="#" onclick="edit()">View/Edit Candidate</a>
-      <a href="#" onclick="election()">Set Election Deadline</a>
+      <a href="#" onclick="view()">View All Candidates</a>
+      <a href="castvote.html">Cast your vote</a>
+      <a href="#" onclick="results()">View Results</a>
       <a href="index.html">Log Out</a>
     </nav>
     <div class="main-right">
-      <h2>Welcome Admin</h2>
+      <h2>Welcome User</h2>
       <p>
-        In the past, billions of Naira have been wasted while conducting elections due to the cost of election materials and the payment of the election officials.
+        In the past, billions of Naira have been wasted while conducting elections due to the cost of election materials
+        and the payment of the election officials.
         Despite all the money spent, there have been a lot of discrepancies associated with the election results. Today,
         Nigerians find it very difficult to believe that elections can be conducted without any form of rigging. <br>
         <br>
-        This project is intended to help the Nigerian government to reduce the rate of stress and corruption in subsequent elections.
+        This project is intended to help the Nigerian government to reduce the rate of stress and corruption in
+        subsequent elections.
       </p>
     </div>
   </section>
+
+<div class="login-right">
+  <div class="login" id="login">
+    <div class="login-contents">
+      <form action="http://localhost:3000/election" id="loginForm" method="POST">
+        <h2>Set Election Deadline</h2>
+        <a href="#" onclick="hideElection()" class="close-btn"">&times;</a>
+        <br /> <br />
+        <input type=" email" name="eml" id="eml" placeholder="Email..." required>
+          <input type="password" name="pwd" id="pwd" placeholder="Password..." required>
+          <button type="submit" class="transparent" onclick="deadline()">Set</button>
+      </form>
+    </div>
+  </div>
+</div>
 
   <div id="footerSpace"></div>
   <footer>

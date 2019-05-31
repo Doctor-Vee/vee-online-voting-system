@@ -151,7 +151,7 @@ button.transparent {
   align-items: center;
 }
 
-.main-right {
+.main-right, .vote-right, .login-right {
   padding: 20px;
   flex: 30;
   text-align: center;
