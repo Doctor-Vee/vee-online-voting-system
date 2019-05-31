@@ -77,7 +77,7 @@ function edit() {
       <p>${candidate.age} years old</p>
     </a>
     <hr>
-    <a href="#">Delete</a> <hr>
+    <a href="#" onclick="deleteCandidate(${candidate.id})">Delete</a> <hr>
     <a href="#" onclick="modal(${candidate.id}, '${candidate.name}', 
     ${candidate.age}, '${candidate.party}', '${candidate.photoUrl}')">Update</a>
   </div>`);
@@ -136,5 +136,29 @@ url += `/${id}`;
       <div><img src="${data.photoUrl}"></div>
       <h3>${data.party}</h3>
       <p>${data.age} years old</p>`);
+    });
+}
+
+function modal(id, name, age, party, photoUrl){
+  showModal();
+  $('#modal-id').attr('value', id);
+  $('#modal-name').attr('value', name);
+  $('#modal-age').attr('value', age);
+  $('#modal-party').attr('value', party);
+  $('#modal-photoUrl').attr('value', photoUrl);
+}
+
+function deleteCandidate(id){
+    let url = 'http://localhost:3000/candidates';
+    url += `/${id}`;
+    $.ajax({
+      url: url,
+      type: 'DELETE',
+      success: function (data) {
+        alert(`The deleted candidate can no longer participate in this election`);
+      },
+      error: function (e) {
+        console.log(e.message);
+      }
     });
 }
