@@ -35,9 +35,9 @@
       <h2>Cast you vote</h2>
       <p>Vote for the candidate of your choice</p>
       <form action="http://localhost:3000/votes" id="voteForm" method="POST">
-        <label for="vote"><input type="radio" name="vote" id="candidate1" placeholder="Party..." required>Candidate
+        <label for="vote"><input type="radio" name="vote" id="candidate1" placeholder="Party..." value="1" required>Candidate
           1</label>
-        <label for="vote"><input type="radio" name="vote" id="candidate2" placeholder="Photo URL" required>Candidate
+        <label for="vote"><input type="radio" name="vote" id="candidate2" placeholder="Photo URL" value="2" required>Candidate
           2</label>
         <button class="shaded" onclick="addCandidate()">Vote</button>
       </form>

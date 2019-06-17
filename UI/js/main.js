@@ -67,6 +67,7 @@ function addUser() {
 //Register a user
 function addCandidate() {
   console.log('In form now');
+  window.location.href = '/';
 }
 
 
@@ -112,6 +113,7 @@ function modal(id, name, age, party, photoUrl){
 }
 
 function update(){
+  console.log("Entered");
   $('#modalForm').submit(function (e) {
     e.preventDefault();
     const id = $('#modal-id').val();
@@ -194,13 +196,6 @@ function deadline(){
     });
   });
 }
-/*
-function castVote(){
-  $('.main-right p').hide();
-  $('.vote-right').show();
-  $('.vote-right').appendTo('.main-right');
-}
-*/
 
 // USER ACTIONS
 
@@ -229,5 +224,43 @@ function view() {
     </a>
   </div>`);
     });
+  });
+}
+
+// View Results
+function results() {
+  $('a[class="current"]').removeClass('current');
+  $('a[onclick="results()"]').addClass('current');
+  $('.main-right').html(`<h2>These are the results</h2> 
+<div class="candidates"></div>
+`);
+let candidate1 = 0, candidate2 = 0;
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:3000/votes',
+    dataType: 'json'
+  }).done(function (data) {
+    console.log(data);
+    $.map(data, function (vote, i) {
+      if(vote.vote === "1"){
+        candidate1++;
+      } else if (vote.vote === "2") {
+        candidate2++;
+      }
+    });
+    $('.candidates').append(`
+    <div class="candidate">
+    <a href="#" onclick="viewCandidate(1)">
+      <h4>Candidate 1</h4>
+      <h3>${candidate1} vote(s)</h3>
+    </a>
+  </div>`);
+  $('.candidates').append(`
+  <div class="candidate">
+  <a href="#" onclick="viewCandidate(2)">
+    <h4>Candidate 2</h4>
+    <h3>${candidate2} vote(s)</h3>
+  </a>
+</div>`);
   });
 }
