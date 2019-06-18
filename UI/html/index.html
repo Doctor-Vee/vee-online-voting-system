@@ -53,12 +53,12 @@
 
   <div class="container" id="main2">
     <div class="side2">
-      <h1>Welcome Back</h1>
+      <h1 id="welcomeBack">Welcome Back</h1>
       <p>To vote for the presidency, kindly login using your login details</p>
-      <form action="admindashboard.html">
-        <input type="email" name="eml" id="eml" placeholder="Email..." required />
-        <input type="password" name="pwd" placeholder="Password..." id="pwd" required />
-        <button class="shaded">Sign in</button>
+      <form action="admindashboard.html" id="loginForm">
+        <input type="email" name="eml" id="loginEml" placeholder="Email..." required />
+        <input type="password" name="pwd" id="loginPwd" placeholder="Password..." required />
+        <button class="shaded" onclick="loginUser()">Sign in</button>
       </form>
     </div>
     <div class="side1">

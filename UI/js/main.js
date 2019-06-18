@@ -64,7 +64,40 @@ function addUser() {
   });
 }
 
-//Register a user
+function loginUser() {
+  $('#loginForm').submit(function (e) {
+    e.preventDefault();
+    const email = $('#loginEml').val();
+    const password = $('#loginPwd').val();
+    const user = { email, password };
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:3000/users',
+      dataType: 'json'
+    }).done(function (data) {
+      let index;
+      for (let i = 0; i < data.length; i++) {
+        if (user.email === data[i].email && user.password === data[i].password) {
+          index = i;
+        }
+      }
+      if (index) {
+        data = data[index];
+        localStorage.setItem('userDetails', JSON.stringify(data));
+        location.href = 'userdashboard.html';
+      } else {
+        $('#welcomeBack').html(`Invalid username or password`);
+      }
+    });
+  });
+}
+
+function logOutUser() {
+  localStorage.removeItem('userDetails');
+  console.log('Done');
+}
+
+//Register a candidate
 function addCandidate() {
   console.log('In form now');
   window.location.href = '/';
@@ -103,7 +136,7 @@ function edit() {
   });
 }
 
-function modal(id, name, age, party, photoUrl){
+function modal(id, name, age, party, photoUrl) {
   showModal();
   $('#modal-id').attr('value', id);
   $('#modal-name').attr('value', name);
@@ -112,7 +145,7 @@ function modal(id, name, age, party, photoUrl){
   $('#modal-photoUrl').attr('value', photoUrl);
 }
 
-function update(){
+function update() {
   console.log("Entered");
   $('#modalForm').submit(function (e) {
     e.preventDefault();
@@ -139,8 +172,8 @@ function update(){
 }
 
 function viewCandidate(id) {
-let url = 'http://localhost:3000/candidates';
-url += `/${id}`;
+  let url = 'http://localhost:3000/candidates';
+  url += `/${id}`;
   $.ajax({
     method: 'GET',
     url: url,
@@ -150,34 +183,34 @@ url += `/${id}`;
     $('.main-right').html(`<h2>${data.name}</h2>
     <div class="candidates"></div>
   `);
-      $('.candidates').append(`
+    $('.candidates').append(`
     <div>
       <div><img src="${data.photoUrl}"></div>
       <h3>${data.party}</h3>
       <p>${data.age} years old</p>`);
-    });
+  });
 }
 
-function deleteCandidate(id){
-    let url = 'http://localhost:3000/candidates';
-    url += `/${id}`;
-    $.ajax({
-      url: url,
-      type: 'DELETE',
-      success: function (data) {
-        alert(`The deleted candidate can no longer participate in this election`);
-      },
-      error: function (e) {
-        console.log(e.message);
-      }
-    });
+function deleteCandidate(id) {
+  let url = 'http://localhost:3000/candidates';
+  url += `/${id}`;
+  $.ajax({
+    url: url,
+    type: 'DELETE',
+    success: function (data) {
+      alert(`The deleted candidate can no longer participate in this election`);
+    },
+    error: function (e) {
+      console.log(e.message);
+    }
+  });
 }
 
-function election(){
+function election() {
   showElection();
 }
 
-function deadline(){
+function deadline() {
   console.log('Entered in to the deadline region')
   $('#electionForm').submit(function (e) {
     e.preventDefault();
@@ -234,7 +267,7 @@ function results() {
   $('.main-right').html(`<h2>These are the results</h2> 
 <div class="candidates"></div>
 `);
-let candidate1 = 0, candidate2 = 0;
+  let candidate1 = 0, candidate2 = 0;
   $.ajax({
     method: 'GET',
     url: 'http://localhost:3000/votes',
@@ -242,7 +275,7 @@ let candidate1 = 0, candidate2 = 0;
   }).done(function (data) {
     console.log(data);
     $.map(data, function (vote, i) {
-      if(vote.vote === "1"){
+      if (vote.vote === "1") {
         candidate1++;
       } else if (vote.vote === "2") {
         candidate2++;
@@ -255,7 +288,7 @@ let candidate1 = 0, candidate2 = 0;
       <h3>${candidate1} vote(s)</h3>
     </a>
   </div>`);
-  $('.candidates').append(`
+    $('.candidates').append(`
   <div class="candidate">
   <a href="#" onclick="viewCandidate(2)">
     <h4>Candidate 2</h4>
